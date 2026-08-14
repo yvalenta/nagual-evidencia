@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nagual — la evidencia, firmada</title>
+<style>
+  :root{
+    --papel:#F6F5F1; --tinta:#15181C; --tinta2:#565C63; --tinta3:#868C93;
+    --linea:#DEDBD1; --panel:#fff; --panel2:#EFEDE6;
+    --mal:#A8461F; --bien:#0B6B4F; --sello:#8A6410;
+    --serif:"Iowan Old Style",Palatino,Georgia,serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--papel:#101215;--tinta:#E8E9E7;--tinta2:#A0A6AC;--tinta3:#767C83;
+          --linea:#2A2E34;--panel:#181B1F;--panel2:#1F2328;
+          --mal:#E08A63;--bien:#4FC49B;--sello:#D9A83C;}
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--papel);color:var(--tinta);line-height:1.6;
+       font:15px/1.6 system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:820px;margin:0 auto;padding:2.5rem 1.1rem 4rem;
+        display:flex;flex-direction:column;gap:2.2rem}
+  h1{font-family:var(--serif);font-size:clamp(1.7rem,4.5vw,2.3rem);font-weight:600;
+     letter-spacing:-.02em;line-height:1.1}
+  h2{font-family:var(--serif);font-size:1.2rem;font-weight:600;margin-bottom:.5rem}
+  .ojo{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;
+       text-transform:uppercase;color:var(--tinta3);margin-bottom:.6rem}
+  p{color:var(--tinta2);max-width:66ch}
+  p+p{margin-top:.6rem}
+  code{font-family:var(--mono);font-size:.86em;background:var(--panel2);
+       padding:1px 5px;border-radius:4px;word-break:break-all}
+  header{border-bottom:2px solid var(--tinta);padding-bottom:1.3rem}
+  .caja{border:1px solid var(--linea);border-radius:3px;background:var(--panel);
+        padding:1rem 1.1rem}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.08em;
+     text-transform:uppercase;color:var(--tinta3);padding:.5rem .6rem;
+     border-bottom:1px solid var(--linea);white-space:nowrap}
+  td{padding:.5rem .6rem;border-bottom:1px solid var(--linea);color:var(--tinta2);
+     font-variant-numeric:tabular-nums}
+  tbody tr:last-child td{border-bottom:none}
+  td.num{font-family:var(--mono);font-size:12.5px;text-align:right}
+  .neg{color:var(--mal)} .pos{color:var(--bien);font-weight:600}
+  .nota{border-left:3px solid var(--sello);background:var(--panel2);
+        padding:.85rem 1rem;border-radius:3px;font-size:14px;color:var(--tinta)}
+  pre{background:var(--panel2);border:1px solid var(--linea);border-radius:3px;
+      padding:.8rem;overflow-x:auto;font-family:var(--mono);font-size:11.5px;
+      color:var(--tinta2);white-space:pre-wrap;word-break:break-all}
+  ol{padding-left:1.2rem;color:var(--tinta2)}
+  li{margin:.35rem 0}
+  a{color:var(--sello)}
+  footer{border-top:1px solid var(--linea);padding-top:1.2rem;
+         font-family:var(--mono);font-size:11px;color:var(--tinta3)}
+  .cargando{color:var(--tinta3);font-family:var(--mono);font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="ojo">nagual · evidencia pública · se sirve gratis y sin muro</div>
+  <h1>Antes de venderte telemetría, mirá si mis mediciones se sostienen.</h1>
+  <p style="margin-top:.7rem">Esta página no te pide que me creas. Sirve un documento
+  <strong>firmado</strong> con la calibración medida de los mercados up/down de
+  Polymarket, y abajo está cómo comprobar la firma vos mismo — sin registrarte, sin
+  pagar y sin hablar con ningún servidor mío.</p>
+</header>
+
+<section>
+  <h2>La calibración, tal como está en el documento firmado</h2>
+  <p style="margin-bottom:.9rem">Precio pagado por una compra contra la frecuencia real
+  con que ese lado ganó. Si las dos columnas coinciden, el mercado está bien calibrado
+  y no hay nada gratis. <strong>El neto ya tiene el fee descontado</strong>: es lo que
+  quedó por trade.</p>
+  <div class="caja" style="padding:0;overflow-x:auto">
+    <table>
+      <thead><tr>
+        <th>Banda de precio</th><th style="text-align:right">Compras</th>
+        <th style="text-align:right">Ganó de verdad</th><th style="text-align:right">Neto medio</th>
+      </tr></thead>
+      <tbody id="filas"><tr><td colspan="4" class="cargando">cargando el documento…</td></tr></tbody>
+    </table>
+  </div>
+  <p class="cargando" style="margin-top:.6rem" id="totales"></p>
+
+  <div class="nota" style="margin-top:1rem">
+    <strong>Lo que salta a la vista, y por eso está publicado:</strong> en casi todas
+    las bandas el neto medio es <em>negativo</em>. Comprar sistemáticamente en esos
+    mercados pierde plata contra el fee. Una medición que solo mostrara las bandas
+    buenas sería marketing; el trabajo entero de nagual es que la cola se vea.
+  </div>
+</section>
+
+<section>
+  <h2>Comprobá la firma sin confiar en mí</h2>
+  <p>El documento es un <a href="https://github.com/yvalenta/sobre">sobre</a> —
+  formato libre, de dominio público, con cuatro implementaciones independientes que
+  producen los mismos bytes. Verificarlo corre entero en tu navegador:</p>
+  <ol style="margin-top:.7rem">
+    <li>Abrí <a href="https://ynt.codes/verificar?url=https://nagual.ynt.codes/evidencia.json">el verificador con este documento cargado</a>.</li>
+    <li>Abrí «Usar otra llave pública» y pegá la llave de abajo — la página trae
+        embebida la de otro emisor, y eso es a propósito: un verificador que le pide
+        la llave a un servidor deja que ese servidor decida el resultado.</li>
+    <li>Tiene que decir <strong>VERIFICABLE</strong>, y el <code>publicKeyId</code>
+        del documento tiene que coincidir con el de la llave que pegaste.</li>
+  </ol>
+  <p style="margin-top:.8rem">La llave pública de nagual
+  (<code id="idllave">…</code>), también servida en
+  <a href="publica.pem">publica.pem</a>:</p>
+  <pre id="pem">cargando…</pre>
+  <p>Y el documento crudo: <a href="evidencia.json">evidencia.json</a>.</p>
+</section>
+
+<section>
+  <h2>Qué NO hay acá adentro</h2>
+  <p><strong>Ninguna wallet.</strong> El colector observa direcciones públicas para
+  confirmar sus propias señales, pero publicar el desempeño de terceros los expone e
+  invita a copiarlos. Lo que se publica es la medición del mercado, agregada.</p>
+  <p><strong>Ninguna señal de latencia.</strong> Ese tipo de ventaja muere en unos 15
+  segundos —medido—, así que venderla sería vender algo que ya no está cuando llega.
+  Queda afuera por decisión, no por no tenerla.</p>
+  <p><strong>Ninguna asesoría financiera.</strong> Son mediciones con sus supuestos
+  declarados adentro del documento firmado, no recomendaciones de inversión.</p>
+</section>
+
+<footer>
+  <span id="pie">nagual · el lado oculto del mercado, medido</span>
+</footer>
+
+</div>
+
+<script>
+// La página NO lleva las cifras escritas: las lee del documento firmado y las
+// muestra. Así no puede desincronizarse — si el documento cambia, esto cambia,
+// y si el documento no carga, acá no aparece un número inventado.
+const pct = x => (x * 100).toFixed(1) + '%';
+const usd = x => (x < 0 ? '−$' : '$') + Math.abs(x).toFixed(4);
+
+fetch('evidencia.json').then(r => r.json()).then(d => {
+  document.getElementById('filas').innerHTML = d.resultados.map(b => `
+    <tr>
+      <td>${b.precioDesdeCentavos}–${b.precioHastaCentavos}¢</td>
+      <td class="num">${b.compras.toLocaleString('es')}</td>
+      <td class="num">${pct(b.ganoFrecuencia)}</td>
+      <td class="num ${b.netoMedioUsd < 0 ? 'neg' : 'pos'}">${usd(b.netoMedioUsd)}</td>
+    </tr>`).join('');
+  const t = d.totales;
+  document.getElementById('totales').textContent =
+    `${t.trades_calificados.toLocaleString('es')} trades calificados · ` +
+    `${t.mercados_resueltos.toLocaleString('es')} mercados resueltos · ` +
+    `documento generado ${d.generadoEn}`;
+  document.getElementById('idllave').textContent = d.signature.publicKeyId;
+  document.getElementById('pie').textContent =
+    `nagual · método ${d.reglasHash.slice(0, 16)}… · revisado ${d.reglasVerificadasAl}`;
+}).catch(() => {
+  document.getElementById('filas').innerHTML =
+    '<tr><td colspan="4" class="cargando">no se pudo leer evidencia.json</td></tr>';
+});
+
+fetch('publica.pem').then(r => r.text())
+  .then(t => document.getElementById('pem').textContent = t.trim())
+  .catch(() => document.getElementById('pem').textContent = 'no se pudo leer publica.pem');
+</script>
+</body>
+</html>
