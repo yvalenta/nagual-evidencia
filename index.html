@@ -98,14 +98,16 @@
   <p>El documento es un <a href="https://github.com/yvalenta/sobre">sobre</a> —
   formato libre, de dominio público, con cuatro implementaciones independientes que
   producen los mismos bytes. Verificarlo corre entero en tu navegador:</p>
-  <ol style="margin-top:.7rem">
-    <li>Abrí <a href="https://ynt.codes/verificar?url=https://nagual.ynt.codes/evidencia.json">el verificador con este documento cargado</a>.</li>
-    <li>Abrí «Usar otra llave pública» y pegá la llave de abajo — la página trae
-        embebida la de otro emisor, y eso es a propósito: un verificador que le pide
-        la llave a un servidor deja que ese servidor decida el resultado.</li>
-    <li>Tiene que decir <strong>VERIFICABLE</strong>, y el <code>publicKeyId</code>
-        del documento tiene que coincidir con el de la llave que pegaste.</li>
-  </ol>
+  <p style="margin:.7rem 0"><a href="verificar/?url=https://nagual.ynt.codes/evidencia.json"><strong>Verificalo
+  acá, de un clic →</strong></a> Se abre el verificador con este documento ya
+  cargado y la llave de nagual puesta; tiene que decir <strong>VERIFICABLE</strong>.
+  Corre entero en tu navegador: lo que verificás no se sube a ningún lado.</p>
+
+  <p>¿Y si no querés confiar ni en esta página? Mejor: bajá el documento y
+  verificalo en <a href="https://ynt.codes/verificar">otro verificador</a> —o en
+  tu propia máquina con cualquiera de las cuatro implementaciones— pegando la
+  llave de abajo. Un verificador que trae la llave puesta es cómodo; uno donde
+  vos ponés la llave es el que prueba algo.</p>
   <p style="margin-top:.8rem">La llave pública de nagual
   (<code id="idllave">…</code>), también servida en
   <a href="publica.pem">publica.pem</a>:</p>
