@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generadoEn": "2026-08-14T21:30:43Z",
+  "generadoEn": "2026-08-18T02:52:17Z",
   "reglasHash": "06b4ff3d161201f91b1fee8f0dc6816113a9b52b3fad01123d90a855a489470b",
   "reglasVerificadasAl": "2026-08-14",
   "habeasData": {
@@ -10,9 +10,9 @@
   },
   "medicion": "calibracion de mercados up/down de Polymarket (5m y 15m)",
   "totales": {
-    "trades_calificados": 1803771,
-    "mercados_resueltos": 6947,
-    "wallets_observadas": 17860
+    "trades_calificados": 94777824,
+    "mercados_resueltos": 174479,
+    "wallets_observadas": 213272
   },
   "supuestos": [
     "El fee asume taker en categoria cripto (0.07 * p * (1-p)); el feed publico no distingue maker de taker, asi que el sesgo castiga de mas a los makers.",
@@ -26,86 +26,86 @@
       "externalId": "banda-0-10",
       "precioDesdeCentavos": 0,
       "precioHastaCentavos": 10,
-      "compras": 47516,
-      "ganoFrecuencia": 0.036009,
-      "netoMedioUsd": -1.563437
+      "compras": 3121720,
+      "ganoFrecuencia": 0.044681,
+      "netoMedioUsd": -0.734939
     },
     {
       "externalId": "banda-10-20",
       "precioDesdeCentavos": 10,
       "precioHastaCentavos": 20,
-      "compras": 76138,
-      "ganoFrecuencia": 0.150214,
-      "netoMedioUsd": -0.421722
+      "compras": 3938415,
+      "ganoFrecuencia": 0.143489,
+      "netoMedioUsd": -0.65004
     },
     {
       "externalId": "banda-20-30",
       "precioDesdeCentavos": 20,
       "precioHastaCentavos": 30,
-      "compras": 109603,
-      "ganoFrecuencia": 0.263341,
-      "netoMedioUsd": -0.15029
+      "compras": 5546624,
+      "ganoFrecuencia": 0.24503,
+      "netoMedioUsd": -0.638526
     },
     {
       "externalId": "banda-30-40",
       "precioDesdeCentavos": 30,
       "precioHastaCentavos": 40,
-      "compras": 129772,
-      "ganoFrecuencia": 0.356625,
-      "netoMedioUsd": -0.18414
+      "compras": 6409923,
+      "ganoFrecuencia": 0.343501,
+      "netoMedioUsd": -0.682532
     },
     {
       "externalId": "banda-40-50",
       "precioDesdeCentavos": 40,
       "precioHastaCentavos": 50,
-      "compras": 171293,
-      "ganoFrecuencia": 0.455214,
-      "netoMedioUsd": -0.171492
+      "compras": 9103702,
+      "ganoFrecuencia": 0.453299,
+      "netoMedioUsd": -0.438824
     },
     {
       "externalId": "banda-50-60",
       "precioDesdeCentavos": 50,
       "precioHastaCentavos": 60,
-      "compras": 259067,
-      "ganoFrecuencia": 0.539853,
-      "netoMedioUsd": -0.42111
+      "compras": 12680175,
+      "ganoFrecuencia": 0.551804,
+      "netoMedioUsd": -0.220607
     },
     {
       "externalId": "banda-60-70",
       "precioDesdeCentavos": 60,
       "precioHastaCentavos": 70,
-      "compras": 166908,
-      "ganoFrecuencia": 0.653186,
-      "netoMedioUsd": -0.092518
+      "compras": 9491053,
+      "ganoFrecuencia": 0.665051,
+      "netoMedioUsd": -0.001465
     },
     {
       "externalId": "banda-70-80",
       "precioDesdeCentavos": 70,
       "precioHastaCentavos": 80,
-      "compras": 140714,
-      "ganoFrecuencia": 0.74704,
-      "netoMedioUsd": -0.218443
+      "compras": 8355890,
+      "ganoFrecuencia": 0.760811,
+      "netoMedioUsd": -0.060349
     },
     {
       "externalId": "banda-80-90",
       "precioDesdeCentavos": 80,
       "precioHastaCentavos": 90,
-      "compras": 137865,
-      "ganoFrecuencia": 0.852631,
-      "netoMedioUsd": 0.002153
+      "compras": 8345858,
+      "ganoFrecuencia": 0.85565,
+      "netoMedioUsd": -0.131177
     },
     {
       "externalId": "banda-90-100",
       "precioDesdeCentavos": 90,
       "precioHastaCentavos": 100,
-      "compras": 215583,
-      "ganoFrecuencia": 0.967038,
-      "netoMedioUsd": 0.244314
+      "compras": 14949689,
+      "ganoFrecuencia": 0.959798,
+      "netoMedioUsd": -0.028832
     }
   ],
   "signature": {
     "algo": "ed25519",
-    "valor": "R4LzlDgIPJkyVidkc99GG/YX3MAS4QplR1cXwChnst0pQwTWeZUhpqpag+zAR4LfRNWOfiZ6IUwfIcZdQe88Bg==",
+    "valor": "kPZReFJkOtbIsLN7xX786EiV77xgt0izR0Mv4NLpYGfd8Gmm26KPUBG+Zwh4m05XHtHy7+5jFHnSkWAX3zIhCw==",
     "publicKeyId": "bf230be6211738964cef6350a65c63a8",
     "cubreCampos": "todos_menos_signature",
     "canonical": "sorted_keys_utf8_json"
