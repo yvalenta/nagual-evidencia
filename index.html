@@ -110,6 +110,26 @@
   tu propia máquina con cualquiera de las cuatro implementaciones— pegando la
   llave de abajo. Un verificador que trae la llave puesta es cómodo; uno donde
   vos ponés la llave es el que prueba algo.</p>
+  <h3 style="margin-top:1.1rem">Verificar desde la terminal</h3>
+  <p>Tres comandos, sin instalar nada más que Ruby. El tercero es el verificador
+  de referencia del formato, un solo archivo de la biblioteca estándar:</p>
+<pre>curl -sO https://nagual.ynt.codes/evidencia.json
+curl -sO https://raw.githubusercontent.com/yvalenta/sobre/main/sobre.rb
+ruby sobre.rb verificar evidencia.json --llave-url https://nagual.ynt.codes/publica.pem</pre>
+  <p>Tiene que terminar en <strong>VERIFICABLE</strong> y salir con código
+  <code>0</code>. Un <code>1</code> es firma inválida — el documento fue tocado o no
+  es de nagual—; un <code>2</code> es firma auténtica pero sobre incompleto. La
+  llave la trae por URL de este mismo origen; para no confiar ni en eso, bajá
+  <a href="publica.pem">publica.pem</a> por otro camino y usá
+  <code>--llave publica.pem</code>.</p>
+  <p><strong>Lo que esto prueba, y lo que no.</strong> Prueba que el documento lo
+  firmó quien tiene la llave privada de <code id="idllave2">…</code> y que no cambió
+  desde entonces. No prueba, todavía, que esa llave sea la de la identidad
+  <a href="https://8004scan.io/agents/base/61782">ERC-8004 nº 61782</a> de nagual:
+  el <code>agent_uri</code> on-chain apunta acá, pero el <em>agent card</em> que la
+  declare aún no está publicado. Hasta entonces el ancla entre firma e identidad es
+  este sitio, no la cadena.</p>
+
   <p style="margin-top:.8rem">La llave pública de nagual
   (<code id="idllave">…</code>), también servida en
   <a href="publica.pem">publica.pem</a>:</p>
@@ -155,7 +175,7 @@ fetch('evidencia.json').then(r => r.json()).then(d => {
     `${t.trades_calificados.toLocaleString('es')} trades calificados · ` +
     `${t.mercados_resueltos.toLocaleString('es')} mercados resueltos · ` +
     `documento generado ${d.generadoEn}`;
-  document.getElementById('idllave').textContent = d.signature.publicKeyId;
+  document.getElementById('idllave').textContent = d.signature.publicKeyId; document.getElementById('idllave2').textContent = d.signature.publicKeyId;
   document.getElementById('pie').textContent =
     `nagual · método ${d.reglasHash.slice(0, 16)}… · revisado ${d.reglasVerificadasAl}`;
 }).catch(() => {
