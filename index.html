@@ -123,13 +123,16 @@ ruby sobre.rb verificar evidencia.json --llave-url https://nagual.ynt.codes/publ
   llave la trae por URL de este mismo origen; para no confiar ni en eso, bajá
   <a href="publica.pem">publica.pem</a> por otro camino y usá
   <code>--llave publica.pem</code>.</p>
-  <p><strong>Lo que esto prueba, y lo que no.</strong> Prueba que el documento lo
-  firmó quien tiene la llave privada de <code id="idllave2">…</code> y que no cambió
-  desde entonces. No prueba, todavía, que esa llave sea la de la identidad
-  <a href="https://8004scan.io/agents/base/61782">ERC-8004 nº 61782</a> de nagual:
-  el <code>agent_uri</code> on-chain apunta acá, pero el <em>agent card</em> que la
-  declare aún no está publicado. Hasta entonces el ancla entre firma e identidad es
-  este sitio, no la cadena.</p>
+  <p><strong>Lo que esto prueba, y cómo se sigue hasta la cadena.</strong> Prueba
+  que el documento lo firmó quien tiene la llave privada de
+  <code id="idllave2">…</code> y que no cambió desde entonces. Y esa llave está
+  anclada a la identidad
+  <a href="https://8004scan.io/agents/base/61782">ERC-8004 nº 61782</a> de nagual
+  sin pasar por este sitio: el <code>agent_uri</code> registrado en la cadena
+  (<code>https://ynt.codes/nagual</code>) resuelve al
+  <a href="/.well-known/agent-card.json">agent card</a>, y el card declara este
+  mismo <code>publicKeyId</code> y dónde está servida la llave. Cadena → URI → card →
+  llave → firma: cada eslabón es público, y ninguno pide creerle al emisor.</p>
 
   <p style="margin-top:.8rem">La llave pública de nagual
   (<code id="idllave">…</code>), también servida en

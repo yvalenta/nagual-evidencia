@@ -1,0 +1,107 @@
+{
+  "protocolVersion": "0.3.0",
+  "name": "nagual",
+  "description": "Calibration of Polymarket up/down binary markets, measured over the full 90-day corpus and published as a signed, third-party-verifiable document. Price band vs. realized win rate, net of fees, INCLUDING the bands that lose: a track record without its tail is marketing. Free and outside any paywall on purpose; live telemetry streams are the paid product and are announced only after the platform operator's read.",
+  "url": "https://nagual.ynt.codes/",
+  "version": "1.0.0",
+  "documentationUrl": "https://nagual.ynt.codes/",
+  "provider": {
+    "organization": "Ynt-labs",
+    "url": "https://ynt.codes"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false,
+    "supportsAuthenticatedExtendedCard": false
+  },
+  "defaultInputModes": [
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "signed-calibration-evidence",
+      "name": "Signed calibration evidence (free)",
+      "description": "One JSON document: realized win rate and mean net-of-fee result per price band over resolved markets, with counts, the method hash, and an Ed25519 signature over the canonical JSON. Verify offline with any of the four `sobre` implementations, or in the browser at https://nagual.ynt.codes/verificar/.",
+      "tags": [
+        "prediction-markets",
+        "polymarket",
+        "calibration",
+        "track-record",
+        "verifiable-output",
+        "ed25519",
+        "free"
+      ],
+      "examples": [
+        "Is buying the 90-100c band on Polymarket up/down markets profitable after fees?",
+        "Give me the signed calibration table and let me verify the signature myself"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    }
+  ],
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "active": true,
+  "x402Support": false,
+  "registrations": [
+    {
+      "agentId": 61782,
+      "agentRegistry": "eip155:8453:0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
+    }
+  ],
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://nagual.ynt.codes/"
+    },
+    {
+      "name": "A2A",
+      "endpoint": "https://nagual.ynt.codes/.well-known/agent-card.json",
+      "version": "0.3.0"
+    },
+    {
+      "name": "evidence",
+      "endpoint": "https://nagual.ynt.codes/evidencia.json"
+    }
+  ],
+  "supportedTrust": [
+    "reputation"
+  ],
+  "x-executor": {
+    "marketplace": "https://execution.market",
+    "walletAddress": "0x222230A7B00491F5c1e9b08e5Ad82677CF647AEd",
+    "identity": {
+      "standard": "ERC-8004",
+      "agentId": 61782,
+      "network": "base",
+      "chainId": 8453,
+      "registryAddress": "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432",
+      "registrationTx": "0x23d60e6914def957016f7f1602ce2a2f8b8d14db86751447b264cfe49c6b2063",
+      "agentUri": "https://ynt.codes/nagual"
+    },
+    "humanInTheLoop": true
+  },
+  "x-verification": {
+    "outputSignature": {
+      "algorithm": "ed25519",
+      "publicKeyId": "bf230be6211738964cef6350a65c63a8",
+      "publicKeyPem": "https://nagual.ynt.codes/publica.pem",
+      "canonicalization": "sorted_keys_utf8_json",
+      "covers": "all_fields_except_signature",
+      "format": "https://github.com/yvalenta/sobre",
+      "verifier": "https://nagual.ynt.codes/verificar/?url=https://nagual.ynt.codes/evidencia.json",
+      "note": "This card is what the on-chain agentURI resolves to, so this is the link between agent 61782 and the Ed25519 key that signs the evidence: chain -> URI -> this card -> publicKeyId -> signature. Every hop is public; none requires trusting the issuer."
+    },
+    "evidence": {
+      "document": "https://nagual.ynt.codes/evidencia.json",
+      "note": "Signed. Includes the bands that lose money after fees."
+    }
+  }
+}
