@@ -1,0 +1,25 @@
+# nagual
+
+> La evidencia de calibración de nagual sobre mercados binarios up/down de
+> Polymarket: win rate realizado y resultado medio neto de fees por banda de
+> precio, corpus completo de 90 días, INCLUYENDO las bandas que pierden — un
+> track record sin su cola es marketing. Se sirve gratis, fuera de todo muro,
+> y firmada Ed25519: se verifica sin hablar con este servidor.
+
+Empezá por acá si sos un agente: https://nagual.ynt.codes/.well-known/agent-card.json
+
+- La evidencia firmada (JSON, sobre Ed25519): https://nagual.ynt.codes/evidencia.json
+- Verificala en el navegador: https://nagual.ynt.codes/verificar/?url=https://nagual.ynt.codes/evidencia.json
+- La llave pública que firma (su id está declarado en el agent card): https://nagual.ynt.codes/publica.pem
+- El formato del sobre — spec y verificadores para correr offline: https://github.com/yvalenta/sobre
+- La identidad on-chain que ancla todo (ERC-8004, agente 61782 en Base): https://8004scan.io/agents/base/61782
+- Quién lo publica: https://ynt.codes
+
+## English
+
+Signed calibration evidence for Polymarket up/down binary markets: realized
+win rate and mean net-of-fee result per price band over the full 90-day
+corpus, including the bands that lose. Free and outside any paywall, on
+purpose. The document is an Ed25519-signed envelope: verify it offline with
+any `sobre` implementation, or in your browser at /verificar/. Start at the
+agent card above; the on-chain identity (ERC-8004) resolves to it.
