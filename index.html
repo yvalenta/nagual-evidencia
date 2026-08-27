@@ -4,6 +4,46 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>nagual — la evidencia, firmada</title>
+<meta name="description" content="Calibración medida de los mercados up/down de Polymarket: 94,8 M de trades calificados, servida gratis y firmada Ed25519 — incluidas las bandas que pierden. Se verifica sin confiar en este servidor.">
+<link rel="canonical" href="https://nagual.ynt.codes/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="nagual — la evidencia, firmada">
+<meta property="og:description" content="La calibración de mercados binarios up/down, medida sobre el corpus completo y firmada. Con la cola a la vista: un track record sin sus bandas malas es marketing.">
+<meta property="og:url" content="https://nagual.ynt.codes/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Dataset",
+      "name": "Calibración medida de mercados up/down de Polymarket",
+      "description": "Win rate realizado y resultado medio neto de fees por banda de precio, sobre el corpus completo de 90 días (94,8 M de trades calificados, 174 mil mercados resueltos), incluidas las bandas que pierden. Documento firmado Ed25519 (formato sobre): se verifica offline sin confiar en el emisor.",
+      "url": "https://nagual.ynt.codes/",
+      "isAccessibleForFree": true,
+      "creator": { "@id": "#nagual" },
+      "distribution": {
+        "@type": "DataDownload",
+        "encodingFormat": "application/json",
+        "contentUrl": "https://nagual.ynt.codes/evidencia.json"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "#nagual",
+      "name": "nagual",
+      "url": "https://nagual.ynt.codes/",
+      "description": "Operación de telemetría de mercados de la casa ynt.codes: mediciones con sus supuestos declarados, firmadas y ancladas a la identidad on-chain ERC-8004 nº 61782 en Base. No es asesoría financiera.",
+      "email": "ynt.val@gmail.com",
+      "contactPoint": { "@type": "ContactPoint", "email": "ynt.val@gmail.com", "contactType": "public inquiries", "availableLanguage": ["es", "en"] },
+      "sameAs": [
+        "https://ynt.codes",
+        "https://8004scan.io/agents/base/61782",
+        "https://github.com/yvalenta/nagual-evidencia"
+      ]
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --papel:#F6F5F1; --tinta:#15181C; --tinta2:#565C63; --tinta3:#868C93;
@@ -81,10 +121,10 @@
         <th>Banda de precio</th><th style="text-align:right">Compras</th>
         <th style="text-align:right">Ganó de verdad</th><th style="text-align:right">Neto medio</th>
       </tr></thead>
-      <tbody id="filas"><tr><td colspan="4" class="cargando">cargando el documento…</td></tr></tbody>
+      <tbody id="filas"><!-- filas:auto --><tr><td>0–10¢</td><td class="num">3.121.720</td><td class="num">4.5%</td><td class="num neg">−$0.7349</td></tr><tr><td>10–20¢</td><td class="num">3.938.415</td><td class="num">14.3%</td><td class="num neg">−$0.6500</td></tr><tr><td>20–30¢</td><td class="num">5.546.624</td><td class="num">24.5%</td><td class="num neg">−$0.6385</td></tr><tr><td>30–40¢</td><td class="num">6.409.923</td><td class="num">34.4%</td><td class="num neg">−$0.6825</td></tr><tr><td>40–50¢</td><td class="num">9.103.702</td><td class="num">45.3%</td><td class="num neg">−$0.4388</td></tr><tr><td>50–60¢</td><td class="num">12.680.175</td><td class="num">55.2%</td><td class="num neg">−$0.2206</td></tr><tr><td>60–70¢</td><td class="num">9.491.053</td><td class="num">66.5%</td><td class="num neg">−$0.0015</td></tr><tr><td>70–80¢</td><td class="num">8.355.890</td><td class="num">76.1%</td><td class="num neg">−$0.0603</td></tr><tr><td>80–90¢</td><td class="num">8.345.858</td><td class="num">85.6%</td><td class="num neg">−$0.1312</td></tr><tr><td>90–100¢</td><td class="num">14.949.689</td><td class="num">96.0%</td><td class="num neg">−$0.0288</td></tr><!-- /filas:auto --></tbody>
     </table>
   </div>
-  <p class="cargando" style="margin-top:.6rem" id="totales"></p>
+  <p class="cargando" style="margin-top:.6rem" id="totales"><!-- totales:auto -->94.777.824 trades calificados · 174.479 mercados resueltos · documento generado 2026-08-18T02:52:17Z<!-- /totales:auto --></p>
 
   <div class="nota" style="margin-top:1rem">
     <strong>Lo que salta a la vista, y por eso está publicado:</strong> con el corpus

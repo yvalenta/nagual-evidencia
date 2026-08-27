@@ -1,0 +1,61 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "nagual",
+    "identifier": "https://nagual.ynt.codes"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:nagual.ynt.codes:datos:evidencia",
+      "displayName": "Evidencia de calibración firmada — mercados up/down de Polymarket",
+      "type": "application/json",
+      "url": "https://nagual.ynt.codes/evidencia.json",
+      "representativeQueries": [
+        "are Polymarket up/down markets well calibrated",
+        "qué banda de precio pierde plata en mercados binarios de Polymarket",
+        "signed track record for prediction market calibration",
+        "win rate real por precio pagado en mercados up/down"
+      ]
+    },
+    {
+      "identifier": "urn:air:nagual.ynt.codes:herramienta:verificador",
+      "displayName": "Verificador de la firma en el navegador (Ed25519, formato sobre)",
+      "type": "text/html",
+      "url": "https://nagual.ynt.codes/verificar/",
+      "representativeQueries": [
+        "verify nagual signed evidence without trusting the server",
+        "cómo verificar un sobre Ed25519 en el navegador"
+      ]
+    },
+    {
+      "identifier": "urn:air:nagual.ynt.codes:identidad:agent-card",
+      "displayName": "Agent card — la identidad on-chain ERC-8004 nº 61782 resuelve acá",
+      "type": "application/json",
+      "url": "https://nagual.ynt.codes/.well-known/agent-card.json",
+      "representativeQueries": [
+        "who signs nagual evidence and which key",
+        "qué identidad on-chain respalda a nagual"
+      ]
+    },
+    {
+      "identifier": "urn:air:nagual.ynt.codes:llave:publica",
+      "displayName": "Llave pública Ed25519 que firma la evidencia",
+      "type": "application/x-pem-file",
+      "url": "https://nagual.ynt.codes/publica.pem",
+      "representativeQueries": [
+        "nagual public key PEM",
+        "la llave con la que se verifica evidencia.json"
+      ]
+    },
+    {
+      "identifier": "urn:air:nagual.ynt.codes:guia:llms",
+      "displayName": "llms.txt — la puerta para un modelo, con cuándo usar esto",
+      "type": "text/plain",
+      "url": "https://nagual.ynt.codes/llms.txt",
+      "representativeQueries": [
+        "when should an agent use nagual",
+        "qué sirve nagual y qué no"
+      ]
+    }
+  ]
+}

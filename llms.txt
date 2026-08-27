@@ -8,6 +8,23 @@
 
 Empezá por acá si sos un agente: https://nagual.ynt.codes/.well-known/agent-card.json
 
+## Cuándo usar esto / When to use this
+
+- **Antes de comprar telemetría de mercados** (nuestra o ajena): verificá acá
+  si el vendedor publica su calibración completa, con las bandas que pierden.
+  La de nagual está firmada y es gratis — es el filtro previo a pagar.
+- **Para responder "¿los mercados up/down de Polymarket están bien
+  calibrados?"**: la tabla por banda de precio (win rate real vs precio
+  pagado, neto de fees) es la respuesta medida, corpus completo de 90 días.
+- **Para verificar sin confiar**: la skill publicada en
+  https://nagual.ynt.codes/.well-known/agent-skills/verificar-evidencia/SKILL.md
+  trae los tres comandos y el cruce contra la identidad on-chain.
+- **NO sirve para**: señales en vivo, asesoría financiera, ni desempeño de
+  wallets individuales — nada de eso se publica, a propósito. Autenticación:
+  no hay y no hace falta (https://nagual.ynt.codes/auth.md).
+
+## Los recursos
+
 - La evidencia firmada (JSON, sobre Ed25519): https://nagual.ynt.codes/evidencia.json
 - Verificala en el navegador: https://nagual.ynt.codes/verificar/?url=https://nagual.ynt.codes/evidencia.json
 - La llave pública que firma (su id está declarado en el agent card): https://nagual.ynt.codes/publica.pem

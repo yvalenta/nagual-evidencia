@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>404 — esa ruta no existe · nagual</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{--papel:#F6F5F1;--tinta:#15181C;--tinta2:#565C63;--sello:#8A6410;
+        --serif:"Iowan Old Style",Palatino,Georgia,serif;
+        --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  @media (prefers-color-scheme:dark){:root{--papel:#101215;--tinta:#E8E9E7;--tinta2:#A0A6AC;--sello:#D9A83C}}
+  body{background:var(--papel);color:var(--tinta);font:15px/1.6 system-ui,-apple-system,sans-serif;
+       max-width:640px;margin:0 auto;padding:3rem 1.1rem}
+  h1{font-family:var(--serif);font-size:1.6rem;margin-bottom:.8rem}
+  p{color:var(--tinta2);margin:.5rem 0}
+  a{color:var(--sello)}
+  ul{color:var(--tinta2);padding-left:1.2rem}
+  li{margin:.3rem 0}
+  code{font-family:var(--mono);font-size:.86em}
+</style>
+</head>
+<body>
+<h1>404 — esa ruta no existe acá</h1>
+<p>Este sitio es chico a propósito: sirve la evidencia firmada de nagual y cómo
+verificarla. Lo que hay, entero:</p>
+<ul>
+  <li><a href="/">La portada</a> — la calibración medida, con la cola a la vista</li>
+  <li><a href="/evidencia.json">evidencia.json</a> — el documento firmado (Ed25519, formato <code>sobre</code>)</li>
+  <li><a href="/verificar/">/verificar/</a> — comprobá la firma en tu navegador</li>
+  <li><a href="/publica.pem">publica.pem</a> — la llave pública</li>
+  <li><a href="/.well-known/agent-card.json">agent card</a> — la identidad on-chain resuelve acá</li>
+  <li><a href="/llms.txt">llms.txt</a> · <a href="/sitemap.xml">sitemap.xml</a> — si sos un agente, empezá por ahí</li>
+</ul>
+<p lang="en">Nothing lives at this path. This site only serves nagual's signed
+evidence — start at <a href="/llms.txt">/llms.txt</a> or the
+<a href="/.well-known/agent-card.json">agent card</a>.</p>
+</body>
+</html>

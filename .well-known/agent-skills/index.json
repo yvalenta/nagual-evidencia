@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agentskills.io/schemas/index-v0.2.0.json",
+  "skills": [
+    {
+      "name": "verificar-evidencia-nagual",
+      "type": "skill",
+      "description": "Verify nagual's signed calibration evidence (Ed25519 'sobre' envelope) end to end — fetch, verify offline, and cross-check the key against the on-chain identity ERC-8004 #61782 on Base — before using any of its numbers.",
+      "url": "https://nagual.ynt.codes/.well-known/agent-skills/verificar-evidencia/SKILL.md",
+      "sha256": "5c03e3c1123ae8d08f3da8745ca5b4b2b31fe09eeeba4fde439c1ddec01f6fd2"
+    }
+  ]
+}
